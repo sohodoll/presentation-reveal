@@ -22,19 +22,134 @@
                         <img class="logo" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="git-logo" />
                     </a>
                 </section>
+
                 <section>
-                    <section>Slide 2</section>
-                    <section>Vertical 1</section>
+                    <section>
+                        <h3>attr()</h3>
+                        <h3>clamp()</h3>
+                    </section>
                 </section>
-                <section data-transition="fade-in">
-                    <pre><code data-trim data-noescape>
-							body {
-								max-width: clamp(900px, 1vh + 1rem, 1600px);
-							}
-  					</code></pre>
-                </section>
+
                 <section>
-                    <video data-autoplay>
+                    <h2>attr()</h2>
+                    <p>A css function that allows you to insert a value within CSS taken from an attribute of an HTML element</p>
+                </section>
+
+                <section>
+                    <img src="./assets/attr1.png" alt="attr1" />
+                </section>
+
+                <section>
+                    <pre data-id="code-animation"><code class="html" data-trim data-line-numbers="8"><script type="text/template">
+						<ul>
+
+							<li>Insert a value within CSS from an HTML attribute</li>
+							<li>Helps avoid code duplication</li>
+
+						</ul>
+
+						<div id="newDiv" > This is a sample div!</div>
+					</script></code></pre>
+                </section>
+
+                <section>
+                    <pre><code class="css" data-trim>
+						#newDiv {
+							background: gray;
+							padding: 10px;
+						  }
+
+						#newDiv::after {
+							content: ' Some Text';
+						  }
+					</code></pre>
+                </section>
+
+                <section>
+                    <img src="./assets/attr2.png" alt="attr2" />
+                </section>
+
+                <section>
+                    <pre><code class="css" data-trim data-line-numbers="7">
+						#newDiv {
+							background: gray;
+							padding: 10px;
+						  }
+
+						#newDiv::after {
+							content: attr(id);
+						  }
+					</code></pre>
+                </section>
+
+                <section>
+                    <img src="./assets/attr3.png" alt="attr3" />
+                </section>
+
+                <section>
+                    <pre><code class="css" data-trim>
+						#newDiv::after {
+							content: " The ID attribute for this div is '" attr(id) "'...Awesome!";
+							background: green;
+						  }
+					</code></pre>
+                </section>
+
+                <section>
+                    <img src="./assets/attr4.png" alt="attr4" />
+                </section>
+
+                <section>
+                    <section>
+                        <h2>attr() in practice</h2>
+                        <p class="fragment">Tooltips?</p>
+                    </section>
+                    <section>
+                        <img src="./assets/attr5.png" alt="attr5" />
+                    </section>
+                </section>
+
+                <section>
+                    <pre data-id="code-animation"><code class="html" data-trim data-line-numbers="8"><script type="text/template">
+						<ul>
+
+							<li>Insert a value within CSS from an HTML attribute</li>
+							<li>Helps avoid code duplication</li>
+
+						</ul>
+
+						<div id="newDiv" data-tooltip="This is a sample tooltip text!"> This is a sample div!</div>
+					</script></code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <pre data-id="code-animation"><code class="css" data-trim data-line-numbers="1-6|8-17|15">
+						#newDiv {
+							background: gray;
+							margin-top: 60px;
+							padding: 10px;
+							position: relative;
+						  }
+
+						  #newDiv::after {
+							position: absolute;
+							left: 100%;
+							width: 150px;
+							bottom: 70%;
+							padding: 5px 15px;
+							border-radius: 20px;
+							content: attr(data-tooltip);
+							background: green;
+						  }
+					</code></pre>
+                </section>
+
+                <section>
+                    <img src="./assets/attr6.png" alt="attr6" />
+                </section>
+
+                <section>
+                    <video loop data-autoplay>
                         <source data-src="./assets/test.webm" type="video/webm" />
                     </video>
                 </section>
@@ -52,6 +167,7 @@
             Reveal.initialize({
                 hash: true,
                 autoAnimate: true,
+                autoPlayMedia: true,
 
                 // Learn about plugins: https://revealjs.com/plugins/
                 plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
