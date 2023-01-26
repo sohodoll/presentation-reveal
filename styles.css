@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: basic-sans, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.content {
+    background: lightblue;
+    padding: 3em;
+    width: 70%;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.199);
+}
+
+.title {
+    color: rgb(255, 118, 64);
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+p {
+    font-size: clamp(1rem, 0.5rem + 2vw, 3rem);
+}

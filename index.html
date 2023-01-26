@@ -4,11 +4,12 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <title>reveal.js</title>
+        <title>CSS Functions</title>
 
         <link rel="stylesheet" href="dist/reset.css" />
         <link rel="stylesheet" href="dist/reveal.css" />
         <link rel="stylesheet" href="dist/theme/dracula.css" />
+        <link rel="icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" />
 
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
@@ -149,9 +150,127 @@
                 </section>
 
                 <section>
+                    <h2>clamp()</h2>
+                    <p class="fragment fade-out">
+                        A CSS function that takes three value parameters (minimum, preferred, and maximum) and makes sure the value always
+                        stays withing this range.
+                    </p>
+                    <p class="fragment">CSS magic for responsive design</p>
+                </section>
+
+                <section>
+                    <pre data-id="code-animation"><code class="html" data-trim><script type="text/template">
+                        <body>
+                            <div class="content">
+                                <h3 class="title">I am a pretty title!</h3>
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Adipisci, fugit alias, in quos sequi illo atque, omnis magnam
+                                    impedit expedita quaerat nesciunt! Totam quaerat aliquam
+                                    sapiente expedita iure facilis magnam.
+                                </p>
+                            </div>
+                        </body>
+					</script></code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <pre data-id="code-animation"><code class="css" data-trim data-line-numbers="1-9|11-16|18-20">
+                        body {
+                            font-family: basic-sans, sans-serif;
+                            min-height: 100vh;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 1rem;
+                            line-height: 1.6;
+                        }
+
+                        .content {
+                            background: lightblue;
+                            padding: 3em;
+                            width: 70%;
+                            box-shadow: 0 0 2em rgba(0, 0, 0, 0.199);
+                        }
+
+                        .title {
+                            color: rgb(255, 118, 64);
+                        }
+					</code></pre>
+                </section>
+
+                <section>
                     <video loop data-autoplay>
-                        <source data-src="./assets/test.webm" type="video/webm" />
+                        <source data-src="./assets/clamp1.webm" type="video/webm" />
                     </video>
+                </section>
+
+                <section data-auto-animate>
+                    <pre data-id="code-animation"><code class="css" data-trim data-line-numbers="1-4 | 3">
+                        .title {
+                            color: rgb(255, 118, 64);
+                            font-size: clamp(2rem, 5vw, 3rem);
+                        }
+					</code></pre>
+                </section>
+
+                <section>
+                    <video loop data-autoplay>
+                        <source data-src="./assets/clamp2.webm" type="video/webm" />
+                    </video>
+                </section>
+
+                <section>
+                    <h3 class="fragment">clamp(min, preferred, max)</h3>
+                    <h3 class="fragment">clamp(1rem, .5rem + 1vw, 4rem)</h3>
+                </section>
+
+                <section data-auto-animate>
+                    <pre data-id="code-animation"><code class="css" data-trim data-line-numbers="3 | 7">
+                        .title {
+                            color: rgb(255, 118, 64);
+                            font-size: clamp(2rem, 5vw, 4rem);
+                        }
+
+                        p {
+                            font-size: clamp(1rem, 0.5rem + 2vw, 3rem);
+                        }
+					</code></pre>
+                </section>
+
+                <section>
+                    <video loop data-autoplay>
+                        <source data-src="./assets/clamp3.webm" type="video/webm" />
+                    </video>
+                </section>
+
+                <section data-auto-animate>
+                    <pre data-id="code-animation"><code class="css" data-trim data-line-numbers="2| 3">
+                        .random {
+                            gap: clamp(2rem, 5vw, 4rem);
+                            width: clamp(300px, 50vw, 300px);
+                        }
+					</code></pre>
+                </section>
+
+                <section>
+                    <video loop data-autoplay>
+                        <source data-src="./assets/clamp4.webm" type="video/webm" />
+                    </video>
+                </section>
+
+                <section>
+                    <a
+                        target="_blank"
+                        href="https://rolling-scopes-school.github.io/sohodoll-JSFEPRESCHOOL2022Q2/songbird/pages/start/index.html"
+                    >
+                        <img class="flappy-logo" src="./assets/flappy-logo.png" alt="songbird" />
+                    </a>
+                </section>
+
+                <section>
+                    <p>Thanks for you time</p>
+                    <p>Hopefully, this was helpful! :)</p>
                 </section>
             </div>
         </div>
